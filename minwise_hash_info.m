@@ -27,9 +27,6 @@ function [val] = minwise_hash_info(iterVals, para, X, writeto_info, results,comp
     
     % how should extra vector go? 
 
-    % IDEA 1: Find median length of vectors
-    %         Construct extra vector of this size
-
     % Then, find 
     val = zeros(1, size(X,2));
     medX = median(sum(X,2));
@@ -41,7 +38,6 @@ function [val] = minwise_hash_info(iterVals, para, X, writeto_info, results,comp
     tmp_intersect = (X*transpose(val))';
     tmp_unioned = sum(bsxfun(@or, val,X),2)';
     tmp_res = tmp_intersect./ tmp_unioned;  
-    %val = ones(1,size(X,2));
 
   elseif strcmp(compute_type, 'store_prob')
     % What p_xe is this algorithm storing?
