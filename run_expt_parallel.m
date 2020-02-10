@@ -201,13 +201,6 @@ function [results] = run_expt_parallel(X,data_name, algo_name, seed_num, paralle
 
           [results] = get_hash_Y_passon(iterVals, para, [],writeto_info, results, 'update_results');
         end
-        % was 10 ??
-        if((sum(isnan(results.ord_RMSE(iter_num,:))) > 0) == true)
-        	['ERROR IS HERE in loop at ord_RMSE with xseg = ', num2str(xseg), ' and yseg ', num2str(yseg)]
-        end
-        if((sum(isnan(results.MLE_RMSE(iter_num,:))) > 0) == true)
-        	['ERROR IS HERE in loop at ord_RMSE with xseg = ', num2str(xseg), ' and yseg ', num2str(yseg)]
-        end
       end
     end
      
